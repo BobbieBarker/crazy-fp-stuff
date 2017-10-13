@@ -1,0 +1,42 @@
+{
+  "name": "crazy-fp-stuff",
+  "version": "1.0.0",
+  "description": "tdd FP playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --watch",
+    "lint": "eslint **/**.js; exit 0",
+    "lint:watch": "chokidar '**/**.js' '!node_modules' -c 'npm run lint' --initial"
+  },
+  "keywords": [
+    "fp",
+    "tdd"
+  ],
+  "author": "chad king",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^4.8.0",
+    "eslint-config-bobbiebarker": "git+https://github.com/BobbieBarker/custom-eslint-rules.git",
+    "eslint-plugin-ava": "^4.2.2",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "ava": {
+    "files": [
+      "index.test.js"
+    ],
+    "source": [
+      "index.js",
+      "!node_modules"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "powerAssert": true
+  },
+  "presets": [
+    "@ava/stage-4",
+    "@ava/transform-test-files"
+  ],
+  "dependencies": {}
+}
