@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --watch",
-    "lint": "eslint **/**.js; exit 0",
+    "lint": "eslint demo-problems.js; exit 0",
     "lint:watch": "chokidar '**/**.js' '!node_modules' -c 'npm run lint' --initial"
   },
   "keywords": [
@@ -20,14 +20,15 @@
     "eslint": "^4.8.0",
     "eslint-config-bobbiebarker": "git+https://github.com/BobbieBarker/custom-eslint-rules.git",
     "eslint-plugin-ava": "^4.2.2",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "testdouble": "^3.2.6"
   },
   "ava": {
     "files": [
-      "index.test.js"
+      "**.test.js"
     ],
     "source": [
-      "index.js",
+      "**.js",
       "!node_modules"
     ],
     "concurrency": 5,
